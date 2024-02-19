@@ -28,26 +28,19 @@ class _HomePageState extends State<HomePage> {
           width: double.infinity,
         ),
         Scaffold(
-          backgroundColor: Colors.transparent,
           appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            title: Text(
+            title: const Text(
               "إسلامى",
-              style: GoogleFonts.elMessiri(
-                  fontSize: 30, fontWeight: FontWeight.bold),
-            ),
-            centerTitle: true,
+          ),
           ),
           bottomNavigationBar: BottomNavigationBar(
               showUnselectedLabels: false,
               showSelectedLabels: false,
-              unselectedItemColor: Colors.black,
               iconSize: 35,
               elevation: 0,
-              backgroundColor: Color(0xFFB7935F),
+              backgroundColor: const Color(0xFFB7935F),
               type: BottomNavigationBarType.fixed,
               currentIndex: index,
-              selectedItemColor: Colors.white,
               onTap: (value) {
                 index = value;
                 setState(() {});
@@ -83,9 +76,9 @@ class _HomePageState extends State<HomePage> {
 
   List<Widget> tabs = [
     QuranTab(),
-    AhadethTab(),
-    SebhaTab(),
-    RadioTab(),
-    SettingsTab(),
+    const AhadethTab(),
+    const SebhaTab(),
+    const RadioTab(),
+    const SettingsTab(),
   ];
 }
