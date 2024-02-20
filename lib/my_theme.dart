@@ -15,6 +15,7 @@ class MyThemeData {
       unselectedItemColor: Colors.black,
     ),
     appBarTheme: AppBarTheme(
+      elevation: 0,
       backgroundColor: Colors.transparent,
       centerTitle: true,
       iconTheme: const IconThemeData(
