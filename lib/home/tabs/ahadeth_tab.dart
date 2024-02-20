@@ -30,7 +30,7 @@ class _AhadethTabState extends State<AhadethTab> {
           ),
           Text(
             "Ahadeth",
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
           const Divider(
             thickness: 3,
