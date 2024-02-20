@@ -4,6 +4,7 @@ import 'package:islami_application/home/home.dart';
 import 'package:islami_application/my_theme.dart';
 import 'package:islami_application/sura_details.dart';
 
+import 'hadeth_details.dart';
 import 'home/tabs/sebha_tab.dart';
 
 void main() {
@@ -24,6 +25,7 @@ class IslamiApp extends StatelessWidget {
         HomePage.routeName: (context) => HomePage(),
         SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
         SebhaTab.routeName: (context) => SebhaTab(),
+        HadethDetails.routeName: (context) => HadethDetails(),
       },
     );
   }
