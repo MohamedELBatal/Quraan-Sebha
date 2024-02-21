@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_application/home/tabs/ahadeth_tab.dart';
 import 'package:islami_application/home/tabs/quran_tab.dart';
 import 'package:islami_application/home/tabs/radio_tab.dart';
@@ -29,8 +29,8 @@ class _HomePageState extends State<HomePage> {
         ),
         Scaffold(
           appBar: AppBar(
-            title: const Text(
-              "إسلامى",
+            title:  Text(
+              AppLocalizations.of(context)!.app_name,
           ),
           ),
           bottomNavigationBar: BottomNavigationBar(

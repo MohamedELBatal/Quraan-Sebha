@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_application/home/home.dart';
 import 'package:islami_application/my_theme.dart';
 import 'package:islami_application/sura_details.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'hadeth_details.dart';
 import 'home/tabs/sebha_tab.dart';
 
@@ -18,15 +16,9 @@ class IslamiApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: [
-        Locale('en'), // English
-        Locale('es'), // Spanish
-      ],
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: const Locale("en"),
       debugShowCheckedModeBanner: false,
       initialRoute: HomePage.routeName,
       theme: MyThemeData.lighttheme,
@@ -34,8 +26,8 @@ class IslamiApp extends StatelessWidget {
       routes: {
         HomePage.routeName: (context) => HomePage(),
         SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
-        SebhaTab.routeName: (context) => SebhaTab(),
-        HadethDetails.routeName: (context) => HadethDetails(),
+        SebhaTab.routeName: (context) => const SebhaTab(),
+        HadethDetails.routeName: (context) => const HadethDetails(),
       },
     );
   }
