@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_application/my_theme.dart';
 
 class RadioTab extends StatelessWidget {
 
@@ -27,7 +28,7 @@ class RadioTab extends StatelessWidget {
             "إذاعة القرآن الكريم ",
             style: GoogleFonts.elMessiri(
               fontSize: 25,
-              color: const Color(0XFF242424),
+              color: MyThemeData.primaryColor,
               fontWeight: FontWeight.w600,
             ),
           ),
