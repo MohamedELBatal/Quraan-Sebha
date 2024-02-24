@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_application/models/sura_model.dart';
+import 'package:islami_application/providers/my_provider.dart';
+import 'package:provider/provider.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static const String routeName = "SuraDetailsScreen";
@@ -17,16 +19,17 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var pro = Provider.of<MyProvider>(context);
     var model = ModalRoute.of(context)!.settings.arguments as SuraModel;
     if (verses.isEmpty) {
       loadFile(model.index);
     }
 
     return Container(
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-            "assets/images/bg.png",
+            pro.getBackgroundPath(),
           ),
           fit: BoxFit.fill,
         ),
