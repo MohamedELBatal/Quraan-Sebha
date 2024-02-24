@@ -5,6 +5,8 @@ import 'package:islami_application/home/tabs/quran_tab.dart';
 import 'package:islami_application/home/tabs/radio_tab.dart';
 import 'package:islami_application/home/tabs/sebha_tab.dart';
 import 'package:islami_application/home/tabs/settings_tab.dart';
+import 'package:islami_application/providers/my_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   static const String routeName = "Home";
@@ -20,10 +22,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return Stack(
       children: [
         Image.asset(
-          "assets/images/bg.png",
+          provider.getBackgroundPath(),
           fit: BoxFit.fill,
           width: double.infinity,
         ),
@@ -34,12 +37,6 @@ class _HomePageState extends State<HomePage> {
           ),
           ),
           bottomNavigationBar: BottomNavigationBar(
-              showUnselectedLabels: false,
-              showSelectedLabels: false,
-              iconSize: 35,
-              elevation: 0,
-              backgroundColor: const Color(0xFFB7935F),
-              type: BottomNavigationBarType.fixed,
               currentIndex: index,
               onTap: (value) {
                 index = value;
