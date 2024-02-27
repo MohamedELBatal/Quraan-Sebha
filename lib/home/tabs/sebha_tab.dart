@@ -61,7 +61,7 @@ class _SebhaTabState extends State<SebhaTab> {
               style: GoogleFonts.elMessiri(
                 fontSize: 25,
                 fontWeight: FontWeight.w600,
-                color: const Color(0xff242424),
+                color: Color(0xFFB7935F),
               ),
             ),
             const SizedBox(
@@ -100,12 +100,12 @@ class _SebhaTabState extends State<SebhaTab> {
                   Color(0xffB7935F),
                 ),
               ),
-              child: Text(
-                Azkar[index],
-                style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 25,
-                    fontWeight: FontWeight.w400),
+              child: Text(Azkar[index],
+                  style: GoogleFonts.elMessiri(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.w400
+                  ),
               ),
             ),
           ],

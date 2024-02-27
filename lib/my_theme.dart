@@ -9,9 +9,12 @@ class MyThemeData {
   static ThemeData lighttheme = ThemeData(
     scaffoldBackgroundColor: Colors.transparent,
     textTheme: TextTheme(
-      bodyLarge: GoogleFonts.elMessiri(fontSize: 30,fontWeight: FontWeight.bold),
-      bodyMedium: GoogleFonts.elMessiri(fontSize: 25,fontWeight: FontWeight.w600),
-      bodySmall: GoogleFonts.elMessiri(fontSize: 20,fontWeight: FontWeight.w500),
+      bodyLarge:
+          GoogleFonts.elMessiri(fontSize: 30, fontWeight: FontWeight.bold),
+      bodyMedium:
+          GoogleFonts.elMessiri(fontSize: 25, fontWeight: FontWeight.w600),
+      bodySmall:
+          GoogleFonts.elMessiri(fontSize: 20, fontWeight: FontWeight.w500),
     ),
     brightness: Brightness.light,
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
@@ -37,9 +40,21 @@ class MyThemeData {
   static ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: Colors.transparent,
     textTheme: TextTheme(
-      bodyLarge: GoogleFonts.elMessiri(fontSize: 30,fontWeight: FontWeight.bold),
-      bodyMedium: GoogleFonts.elMessiri(fontSize: 25,fontWeight: FontWeight.w600),
-      bodySmall: GoogleFonts.elMessiri(fontSize: 20,fontWeight: FontWeight.w500),
+      bodyLarge: GoogleFonts.elMessiri(
+        fontSize: 30,
+        fontWeight: FontWeight.bold,
+        color: const Color(0xFFFACC1D),
+      ),
+      bodyMedium: GoogleFonts.elMessiri(
+        fontSize: 25,
+        fontWeight: FontWeight.w600,
+        color: const Color(0xFFFACC1D),
+      ),
+      bodySmall: GoogleFonts.elMessiri(
+        fontSize: 20,
+        fontWeight: FontWeight.w500,
+        color: const Color(0xFFFACC1D),
+      ),
     ),
     brightness: Brightness.dark,
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
