@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:islami_application/main.dart';
 import 'package:islami_application/my_theme.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/my_provider.dart';
 
 class LanguageBottomSheet extends StatelessWidget {
-  LanguageBottomSheet({super.key});
+  const LanguageBottomSheet({super.key});
 
 
   @override

@@ -61,7 +61,7 @@ class _SebhaTabState extends State<SebhaTab> {
               style: GoogleFonts.elMessiri(
                 fontSize: 25,
                 fontWeight: FontWeight.w600,
-                color: Color(0xFFB7935F),
+                color: const Color(0xFFB7935F),
               ),
             ),
             const SizedBox(
@@ -76,7 +76,7 @@ class _SebhaTabState extends State<SebhaTab> {
               ),
               padding: const EdgeInsets.all(20),
               child: Text(
-                "$num",
+                "$num",style: const TextStyle(color: Colors.white),
               ),
             ),
             const SizedBox(

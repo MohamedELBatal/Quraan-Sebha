@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_application/bottom_sheet/them_bottom_sheet.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../bottom_sheet/language_bottom_sheet.dart';
 
 class SettingsTab extends StatelessWidget {
@@ -13,38 +13,38 @@ class SettingsTab extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Language",style:Theme.of(context).textTheme.bodyLarge,),
+          Text(AppLocalizations.of(context)!.language,style:Theme.of(context).textTheme.bodyLarge,),
           InkWell(
             onTap: () {
               showModalBottomSheet(context: context,
                 isScrollControlled: true,
                 builder: (context) {
-                return Container(
+                return SizedBox(
                   height: MediaQuery.of(context).size.height * .70,
-                  child: LanguageBottomSheet(),
+                  child: const LanguageBottomSheet(),
                 );
               },
               );
             },
             child: Container(
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               width: double.infinity,
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xFFB7935F)),
+                border: Border.all(color: const Color(0xFFB7935F)),
                 borderRadius: BorderRadius.circular(25),),
-              child: Text("Arabic",style:Theme.of(context).textTheme.bodyMedium,),
+              child: Text(AppLocalizations.of(context)!.arabic,style:Theme.of(context).textTheme.bodyMedium,),
             ),
           ),
           SizedBox(
             height: MediaQuery.of(context).size.height*.03,
           ),
-          Text("Theme",style:Theme.of(context).textTheme.bodyLarge,),
+          Text(AppLocalizations.of(context)!.theme,style:Theme.of(context).textTheme.bodyLarge,),
           InkWell(
             onTap: () {
               showModalBottomSheet(context: context,
                 isScrollControlled: true,
                 builder: (context) {
-                  return Container(
+                  return SizedBox(
                     height: MediaQuery.of(context).size.height * .70,
                     child: ThemeBottomSheet(),
                   );
@@ -52,12 +52,12 @@ class SettingsTab extends StatelessWidget {
               );
             },
             child: Container(
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               width: double.infinity,
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xFFB7935F)),
+                border: Border.all(color: const Color(0xFFB7935F)),
                 borderRadius: BorderRadius.circular(25),),
-              child: Text("Light",style:Theme.of(context).textTheme.bodyMedium,),
+              child: Text(AppLocalizations.of(context)!.light,style:Theme.of(context).textTheme.bodyMedium,),
             ),
           ),
         ],

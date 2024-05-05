@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_application/home/tabs/ahadeth_tab.dart';
 import 'package:islami_application/home/tabs/quran_tab.dart';
-import 'package:islami_application/home/tabs/radio_tab.dart';
 import 'package:islami_application/home/tabs/sebha_tab.dart';
 import 'package:islami_application/home/tabs/settings_tab.dart';
 import 'package:islami_application/providers/my_provider.dart';
@@ -32,9 +31,10 @@ class _HomePageState extends State<HomePage> {
         ),
         Scaffold(
           appBar: AppBar(
-            title:  Text(
+            title: Text(
               AppLocalizations.of(context)!.app_name,
-          ),
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
           ),
           bottomNavigationBar: BottomNavigationBar(
               currentIndex: index,
@@ -58,11 +58,6 @@ class _HomePageState extends State<HomePage> {
                       AssetImage("assets/images/icon_sebha.png"),
                     ),
                     label: ""),
-                BottomNavigationBarItem(
-                    icon: ImageIcon(
-                      AssetImage("assets/images/icon_radio.png"),
-                    ),
-                    label: ""),
                 BottomNavigationBarItem(icon: Icon(Icons.settings), label: ""),
               ]),
           body: tabs[index],
@@ -73,9 +68,8 @@ class _HomePageState extends State<HomePage> {
 
   List<Widget> tabs = [
     QuranTab(),
-     AhadethTab(),
+    AhadethTab(),
     const SebhaTab(),
-    const RadioTab(),
     const SettingsTab(),
   ];
 }
