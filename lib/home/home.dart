@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_application/home/tabs/ahadeth_tab.dart';
 import 'package:islami_application/home/tabs/quran_tab.dart';
-import 'package:islami_application/home/tabs/radio_tab.dart';
 import 'package:islami_application/home/tabs/sebha_tab.dart';
 import 'package:islami_application/home/tabs/settings_tab.dart';
+import 'package:islami_application/providers/my_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   static const String routeName = "Home";
@@ -20,34 +21,23 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return Stack(
       children: [
         Image.asset(
-          "assets/images/bg.png",
+          provider.getBackgroundPath(),
           fit: BoxFit.fill,
           width: double.infinity,
         ),
         Scaffold(
-          backgroundColor: Colors.transparent,
           appBar: AppBar(
-            backgroundColor: Colors.transparent,
             title: Text(
-              "إسلامى",
-              style: GoogleFonts.elMessiri(
-                  fontSize: 30, fontWeight: FontWeight.bold),
+              AppLocalizations.of(context)!.app_name,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
-            centerTitle: true,
           ),
           bottomNavigationBar: BottomNavigationBar(
-              showUnselectedLabels: false,
-              showSelectedLabels: false,
-              unselectedItemColor: Colors.black,
-              iconSize: 35,
-              elevation: 0,
-              backgroundColor: Color(0xFFB7935F),
-              type: BottomNavigationBarType.fixed,
               currentIndex: index,
-              selectedItemColor: Colors.white,
               onTap: (value) {
                 index = value;
                 setState(() {});
@@ -68,11 +58,6 @@ class _HomePageState extends State<HomePage> {
                       AssetImage("assets/images/icon_sebha.png"),
                     ),
                     label: ""),
-                BottomNavigationBarItem(
-                    icon: ImageIcon(
-                      AssetImage("assets/images/icon_radio.png"),
-                    ),
-                    label: ""),
                 BottomNavigationBarItem(icon: Icon(Icons.settings), label: ""),
               ]),
           body: tabs[index],
@@ -84,8 +69,7 @@ class _HomePageState extends State<HomePage> {
   List<Widget> tabs = [
     QuranTab(),
     AhadethTab(),
-    SebhaTab(),
-    RadioTab(),
-    SettingsTab(),
+    const SebhaTab(),
+    const SettingsTab(),
   ];
 }
